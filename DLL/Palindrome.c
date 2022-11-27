@@ -41,7 +41,7 @@ void display()
             else
                 {
                     ptr = head;
-                    while(ptr->right != NULL)
+                    while(ptr != NULL)
                     {
                         printf("[ %c ]  ", ptr->data);
                         ptr = ptr->right;
@@ -54,14 +54,8 @@ bool checkPal() // Function to check plaindrome
 {
     front = head; // First node
     back = head; // Last node representation
-    while(back != NULL) // Reaches the last node
-      do
-        {
-            if(back->right == NULL)
-                break;
-            back = back->right;            
-        }while(back!=NULL);
-        
+    while(back->right != NULL)  // Reaches the last node
+        back = back->right;
     do
     {
         if(front->data != back->data)
@@ -83,11 +77,11 @@ int main()
         insert(s[i]);
         i++;
     }
-    printf("\nAfter inserting elements into Linked List\n");
+    printf("\nEntered string into Linked List -->\t");
     display();
     if(checkPal())
-        printf("Pal");
+        printf("Palindrome\n");
     else        
-        printf("nope");
+        printf("Not Palindrome\n");
     return 0;
 }
