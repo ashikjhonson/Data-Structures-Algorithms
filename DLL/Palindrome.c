@@ -1,3 +1,7 @@
+/*
+String Palindrome Checker
+Written by Ashik 27/11/2022
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
